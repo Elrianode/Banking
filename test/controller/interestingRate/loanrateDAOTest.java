@@ -92,7 +92,26 @@ public class loanrateDAOTest {
         String month = "6month";
         int idrate = 1;
         loanrateDAO instance = new loanrateDAO();
-        Double expResult = 1.2000000476837158;
+        float kq = -1;
+        try {
+            DBconnection dbConnection = new DBconnection();
+            connection = dbConnection.getConnect();
+            String strSQL = "SELECT `" + month + "` FROM `loanrate` WHERE `id`= '" + idrate + "'  ";
+
+            Statement comm = connection.createStatement();
+            ResultSet rs = comm.executeQuery(strSQL);
+
+            while (rs.next()) {
+                kq = rs.getFloat(month);
+            }
+            
+
+        } catch (Exception e) {
+            Logger.getLogger(loanrateDAO.class.getName()).log(Level.SEVERE, null, e);
+            
+
+        }
+        float expResult = kq;
         float result = instance.getRate(month, idrate);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.

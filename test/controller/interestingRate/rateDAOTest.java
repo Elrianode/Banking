@@ -120,7 +120,7 @@ public class rateDAOTest {
             Logger.getLogger(CustomerDAO.class.getName()).log(Level.SEVERE, null, e);
 
         }
-        float result = instance.getRate(month, id);
+        float result = kq1;
         System.out.println(result + "  " + expResult);
         if (result == expResult) {
             kq = 1;
@@ -155,7 +155,7 @@ public class rateDAOTest {
             Logger.getLogger(rateDAO.class.getName()).log(Level.SEVERE, null, e);
 
         }
-        String expResult = "Thu May 09 19:21:02 ICT 2019";
+        String expResult = kq;
         String result = instance.getDate(id).toString();
 
         assertEquals(expResult, result);

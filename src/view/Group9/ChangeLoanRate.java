@@ -184,6 +184,7 @@ public class ChangeLoanRate extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         loanrateDAO loan = new loanrateDAO();
+        lblDate.setText("" + loan.getDate(loan.getCurrentNumberRate()));
         txt6thang.setHorizontalAlignment(JTextField.RIGHT);
         txt12thang.setHorizontalAlignment(JTextField.RIGHT);
         txt36thang.setHorizontalAlignment(JTextField.RIGHT);

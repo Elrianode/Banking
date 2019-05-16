@@ -11,6 +11,7 @@ import controller.excel.WriteExcelCustomer;
 import controller.DAO.interestingRate.rateDAO;
 import Model.Customer;
 import controller.DAO.CustomerDAO;
+import controller.DAO.interestingRate.loanrateDAO;
 import java.awt.Component;
 import java.io.File;
 import java.sql.Connection;
@@ -77,6 +78,19 @@ public class BankMainFrm extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         lblTongThu = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblChiFilter = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblThuFilter = new javax.swing.JTable();
+        cboQuy = new javax.swing.JComboBox();
+        cboNam = new javax.swing.JComboBox();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        lblTotalThu = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
@@ -102,6 +116,8 @@ public class BankMainFrm extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+
+        jTabbedPane2.setMinimumSize(new java.awt.Dimension(150, 200));
 
         JTableDanhSachThu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -307,6 +323,115 @@ public class BankMainFrm extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Danh sách sổ tiết kiệm", jPanel7);
 
+        tblChiFilter.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(tblChiFilter);
+
+        tblThuFilter.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(tblThuFilter);
+
+        cboQuy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        cboQuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboQuyActionPerformed(evt);
+            }
+        });
+
+        cboNam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2019", "2020", "2021", "2022", "2023" }));
+
+        jLabel3.setText("jLabel3");
+
+        jLabel6.setText("jLabel6");
+
+        jLabel7.setText("Tháng");
+
+        jLabel8.setText("Năm");
+
+        jButton2.setText("Xem");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cboQuy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cboNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50)
+                                .addComponent(jButton2))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(85, 85, 85)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(127, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTotalThu, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(237, 237, 237))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboQuy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(jButton2))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addComponent(lblTotalThu, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(166, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Báo cáo", jPanel8);
+
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton5.setText("Thay đổi lãi tiết kiệm");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -372,7 +497,7 @@ public class BankMainFrm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -418,14 +543,44 @@ public class BankMainFrm extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(BankMainFrm.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        try {
+            hienThiDanhSachKhachHangChiTheoFilter(Integer.parseInt(cboQuy.getSelectedItem().toString()), Integer.parseInt(cboNam.getSelectedItem().toString()));
+            hienThiDanhSachSoTietKiemTheoFilter(Integer.parseInt(cboQuy.getSelectedItem().toString()), Integer.parseInt(cboNam.getSelectedItem().toString()));
+        } catch (SQLException ex) {
+            Logger.getLogger(BankMainFrm.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_formWindowOpened
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        ChangeLoanRate loan = new ChangeLoanRate();
+        loan.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        LoginFrm newFrm = new LoginFrm();
+        newFrm.setVisible(true);
+    }//GEN-LAST:event_btnDangXuatActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         ChangeInterestRate rate = new ChangeInterestRate();
         rate.setVisible(true);
-
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        ListInterestrateFrm listInterestrate = new ListInterestrateFrm();
+        listInterestrate.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -440,30 +595,19 @@ public class BankMainFrm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void cboQuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboQuyActionPerformed
         // TODO add your handling code here:
-        ListInterestrateFrm listInterestrate = new ListInterestrateFrm();
-        listInterestrate.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_cboQuyActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        LoginFrm newFrm = new LoginFrm();
-        newFrm.setVisible(true);
-
-    }//GEN-LAST:event_btnDangXuatActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        ChangeLoanRate loan = new ChangeLoanRate();
-        loan.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+        try {
+            hienThiDanhSachKhachHangChiTheoFilter(Integer.parseInt(cboQuy.getSelectedItem().toString()), Integer.parseInt(cboNam.getSelectedItem().toString()));
+            hienThiDanhSachSoTietKiemTheoFilter(Integer.parseInt(cboQuy.getSelectedItem().toString()), Integer.parseInt(cboNam.getSelectedItem().toString()));
+        } catch (SQLException ex) {
+            Logger.getLogger(BankMainFrm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public void hienThiDanhSachKhachHang() throws SQLException {
 
@@ -477,26 +621,6 @@ public class BankMainFrm extends javax.swing.JFrame {
                         return false;
                     }
                 };
-//        JTableDanhSachThu.setAutoResizeMode(JTableDanhSachThu.AUTO_RESIZE_OFF);
-//        for (int column = 0; column < JTableDanhSachThu.getColumnCount(); column++) {
-//            TableColumn tableColumn = JTableDanhSachThu.getColumnModel().getColumn(column);
-//            int preferredWidth = tableColumn.getMinWidth();
-//            int maxWidth = tableColumn.getMaxWidth();
-//
-//            for (int row = 0; row < JTableDanhSachThu.getRowCount(); row++) {
-//                TableCellRenderer cellRenderer = JTableDanhSachThu.getCellRenderer(row, column);
-//                Component c = JTableDanhSachThu.prepareRenderer(cellRenderer, row, column);
-//                int width = c.getPreferredSize().width + JTableDanhSachThu.getIntercellSpacing().width;
-//                preferredWidth = Math.max(preferredWidth, width);
-//
-//                //  We've exceeded the maximum width, no need to check other rows
-//                if (preferredWidth >= maxWidth) {
-//                    preferredWidth = maxWidth;
-//                    break;
-//                }
-//            }
-//        }
-
         Object[] row;
 
         CustomerDAO cusDao = new CustomerDAO();
@@ -515,11 +639,11 @@ public class BankMainFrm extends javax.swing.JFrame {
             row[2] = rs.getString("address");
             try {
                 row[3] = Long.parseLong(rs.getString("idcard"));
-                row[4] = Long.parseLong(rs.getString("phone"));
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Lỗi dữ liệu");
             }
+            row[4] = rs.getString("phone");
             model.addRow(row);
         }
 
@@ -534,9 +658,8 @@ public class BankMainFrm extends javax.swing.JFrame {
     }
 
     public void hienThiDanhSachKhachHangChi() {
-
         String[] colTieuDe = new String[]{"Id",
-            "Họ tên", "Tiền vay", "Ngày vay tiền", " Loại vay tiền"};
+            "Họ tên", "Tiền vay", "Kì hạn", "Ngày vay tiền", " Loại vay tiền"};
 
         DefaultTableModel model
                 = new DefaultTableModel(colTieuDe, 0) {
@@ -553,15 +676,17 @@ public class BankMainFrm extends javax.swing.JFrame {
             Statement comm = conn.createStatement();
             ResultSet rs = comm.executeQuery(strSQL);
             while (rs.next()) {
-                String rows[] = new String[5];
+                String rows[] = new String[colTieuDe.length];
                 rows[0] = rs.getString("id"); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
                 rows[1] = rs.getString("name");
                 rows[2] = rs.getString("loan") + "$"; // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
-                rows[3] = rs.getString("created_at");
-                rows[4] = rs.getString("kind"); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
+                rows[3] = rs.getInt("term") + " tháng";
+                rows[4] = rs.getString("created_at");
+                rows[5] = rs.getString("kind"); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
 
                 model.addRow(rows);
             }
+            conn.close();
             jTableKhachHangChi.setModel(model);
             DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
             rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
@@ -571,7 +696,6 @@ public class BankMainFrm extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println("" + e);
         }
-
     }
 
     public void hienThiDanhSachSoTietKiem() throws SQLException {
@@ -605,11 +729,11 @@ public class BankMainFrm extends javax.swing.JFrame {
             row[2] = rs.getString("address");
             try {
                 row[3] = Long.parseLong(rs.getString("idcard"));
-                row[4] = Long.parseLong(rs.getString("phone"));
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Lỗi dữ liệu");
             }
+            row[4] = rs.getString("phone");
             row[5] = rs.getString("cash") + "$";
             row[6] = rs.getString("created_at"); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
             row[7] = rs.getString("term") + " tháng";
@@ -617,7 +741,7 @@ public class BankMainFrm extends javax.swing.JFrame {
             row[8] = rs.getFloat(str);
             model.addRow(row);
         }
-
+        conn.close();
         // }
         JTableSoTietKiem.setModel(model);
         jTableKhachHangChi.getAutoResizeMode();
@@ -628,6 +752,124 @@ public class BankMainFrm extends javax.swing.JFrame {
         JTableSoTietKiem.getColumnModel().getColumn(3).setCellRenderer(rightRenderer);
         JTableSoTietKiem.getColumnModel().getColumn(5).setCellRenderer(rightRenderer);
 
+    }
+
+    public void hienThiDanhSachKhachHangChiTheoFilter(int quy, int year) {
+        loanrateDAO loanDao = new loanrateDAO();
+
+        String[] colTieuDe = new String[]{"Id",
+            "Họ tên", "Tiền vay", "Ngày vay tiền",};
+
+        DefaultTableModel model
+                = new DefaultTableModel(colTieuDe, 0) {
+                    @Override
+                    public boolean isCellEditable(int row, int column) {
+                        return false;
+                    }
+                };
+        model.setColumnIdentifiers(colTieuDe);
+        DBconnection connection = new DBconnection();
+        Connection conn = connection.getConnect();
+        try {
+            String strSQL = " SELECT * FROM `customer` INNER JOIN `loanaccount` ON customer.id = loanaccount.id_customer INNER JOIN `loanrate` ON loanaccount.id_loanrate= loanrate.id";
+            Statement comm = conn.createStatement();
+            ResultSet rs = comm.executeQuery(strSQL);
+            while (rs.next()) {
+                String rows[] = new String[colTieuDe.length];
+                rows[0] = rs.getString("id"); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
+                rows[1] = rs.getString("name");
+                rows[2] = rs.getString("loan") + "$"; // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
+                //          rows[3] = rs.getInt("term") + " tháng";
+                rows[3] = rs.getString("created_at");
+                //    rows[5] = rs.getString("kind"); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
+                int thang = loanDao.getMonth(rs.getInt(9)) + rs.getInt("term");
+                while (thang > 12) {
+                    thang = thang - 12;
+                }
+                // System.out.println("thang: " + thang);
+                int nam = loanDao.getYear(rs.getInt(9)) + (loanDao.getMonth(rs.getInt(9)) + rs.getInt("term")) / 12;
+                if ((quy == thang) && (nam == year)) {
+                    model.addRow(rows);
+
+                }
+
+            }
+            conn.close();
+            tblChiFilter.setModel(model);
+            DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+            rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+            tblChiFilter.getColumnModel().getColumn(0).setCellRenderer(rightRenderer);
+            tblChiFilter.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
+            tblChiFilter.getAutoResizeMode();
+        } catch (Exception e) {
+            System.out.println("" + e);
+        }
+
+    }
+
+    public void hienThiDanhSachSoTietKiemTheoFilter(int quy, int year) throws SQLException {
+        float total = 0;
+        rateDAO loanDao = new rateDAO();
+        String[] colTieuDe = new String[]{"Id",
+            "Họ tên", "Tiền gửi", "Ngày lập thẻ"};
+
+        DefaultTableModel model
+                = new DefaultTableModel(colTieuDe, 0) {
+                    @Override
+                    public boolean isCellEditable(int row, int column) {
+                        return false;
+                    }
+                };
+
+        Object[] row;
+
+        CustomerDAO cusDao = new CustomerDAO();
+        List<Customer> lstCustomer = cusDao.getListCustomer();
+        DBconnection connection = new DBconnection();
+        Connection conn = connection.getConnect();
+        //  for (Customer obj : lstCustomer) {
+        String strSQL = " SELECT * FROM `savingaccount` INNER JOIN `customer` ON savingaccount.idcustomer = customer.id INNER JOIN `interestrate` ON savingaccount.id_rate = interestrate.id";
+        Statement comm = conn.createStatement();
+        ResultSet rs = comm.executeQuery(strSQL);
+        while (rs.next()) {
+            row = new Object[colTieuDe.length];
+
+            row[0] = rs.getInt("id");
+            row[1] = rs.getString("name");
+            // row[2] = rs.getString("address");
+//            try {
+//                row[3] = Long.parseLong(rs.getString("idcard"));
+//
+//            } catch (Exception e) {
+//                JOptionPane.showMessageDialog(rootPane, "Lỗi dữ liệu");
+//            }
+//            row[4] = rs.getString("phone");
+            row[2] = rs.getString("cash") + "$";
+            row[3] = rs.getString("created_at"); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
+//            row[7] = rs.getString("term") + " tháng";
+            //  String str = "m" + rs.getString("term");
+            float a = rs.getFloat("cash");
+            float rate = loanDao.getRate("m" + rs.getInt("term"), rs.getInt("id_rate"));
+            int thang = loanDao.getMonth(rs.getInt(1)) + rs.getInt("term");
+            while (thang > 12) {
+                thang = thang - 12;
+            }
+            System.out.println("thang: " + thang);
+            int nam = loanDao.getYear(rs.getInt(1)) + (loanDao.getMonth(rs.getInt(9)) + rs.getInt("term")) / 12;
+            System.out.println("nam: " + nam);
+            if ((quy == thang) && (nam == year)) {
+                model.addRow(row);
+                total = total + (a * rate);
+
+            }
+        }
+        lblTotalThu.setText("" + total);
+        tblThuFilter.setModel(model);
+        tblThuFilter.getAutoResizeMode();
+        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+        tblThuFilter.getColumnModel().getColumn(0).setCellRenderer(rightRenderer);
+        conn.close();
     }
 
     /**
@@ -669,7 +911,10 @@ public class BankMainFrm extends javax.swing.JFrame {
     private static javax.swing.JTable JTableDanhSachThu;
     private static javax.swing.JTable JTableSoTietKiem;
     private static javax.swing.JButton btnDangXuat;
+    private static javax.swing.JComboBox cboNam;
+    private static javax.swing.JComboBox cboQuy;
     private static javax.swing.JButton jButton1;
+    private static javax.swing.JButton jButton2;
     private static javax.swing.JButton jButton3;
     private static javax.swing.JButton jButton4;
     private static javax.swing.JButton jButton5;
@@ -677,8 +922,12 @@ public class BankMainFrm extends javax.swing.JFrame {
     private static javax.swing.JFrame jFrame1;
     private static javax.swing.JLabel jLabel1;
     private static javax.swing.JLabel jLabel2;
+    private static javax.swing.JLabel jLabel3;
     private static javax.swing.JLabel jLabel4;
     private static javax.swing.JLabel jLabel5;
+    private static javax.swing.JLabel jLabel6;
+    private static javax.swing.JLabel jLabel7;
+    private static javax.swing.JLabel jLabel8;
     private static javax.swing.JPanel jPanel1;
     private static javax.swing.JPanel jPanel2;
     private static javax.swing.JPanel jPanel3;
@@ -686,12 +935,18 @@ public class BankMainFrm extends javax.swing.JFrame {
     private static javax.swing.JPanel jPanel5;
     private static javax.swing.JPanel jPanel6;
     private static javax.swing.JPanel jPanel7;
+    private static javax.swing.JPanel jPanel8;
     private static javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JScrollPane jScrollPane2;
     private static javax.swing.JScrollPane jScrollPane3;
+    private static javax.swing.JScrollPane jScrollPane4;
+    private static javax.swing.JScrollPane jScrollPane5;
     private static javax.swing.JTabbedPane jTabbedPane2;
     private static javax.swing.JTable jTableKhachHangChi;
     private static javax.swing.JLabel lblTongChi;
     private static javax.swing.JLabel lblTongThu;
+    private static javax.swing.JLabel lblTotalThu;
+    private static javax.swing.JTable tblChiFilter;
+    private static javax.swing.JTable tblThuFilter;
     // End of variables declaration//GEN-END:variables
 }

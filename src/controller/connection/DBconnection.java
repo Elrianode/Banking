@@ -24,7 +24,7 @@ public class DBconnection {
             Class.forName(JDBC_DRIVER);
             conn = DriverManager.getConnection(DATABASE_PATH,
                     "root", "");
-            System.out.println("kết nối Database");
+         //   System.out.println("kết nối Database");
         } catch (ClassNotFoundException | SQLException ex) {
             System.err.println("Lỗi khi kết nối DB: "
                     + ex.toString());

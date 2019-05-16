@@ -1,4 +1,5 @@
 
+import controller.DAO.interestingRate.loanrateDAO;
 import view.register.LoginFrm;
 
 /*
@@ -15,9 +16,9 @@ public class MainClass {
     public static void main(String[] args) {
 //        LoginFrm loginfrm = new LoginFrm();
 //        loginfrm.setVisible(true);
-        java.util.Date utilDate = new java.util.Date();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-        System.out.println("" + utilDate);
-        System.out.println("" + sqlDate);
+        loanrateDAO newDao = new loanrateDAO();
+        System.out.println("" + newDao.getMonth(1));
+        int n = 38 / 12;
+        System.out.println("" + n);
     }
 }

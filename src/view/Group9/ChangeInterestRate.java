@@ -268,14 +268,13 @@ public class ChangeInterestRate extends javax.swing.JFrame {
                 double newrate18 = Double.parseDouble(txtRate18.getText());
                 double newrate24 = Double.parseDouble(txtRate24.getText());
                 double newrate36 = Double.parseDouble(txtRate36.getText());
-                Date dt = new Date();
-                System.out.println("" + dt);
-                String date = dt.toString();
+                java.util.Date utilDate = new java.util.Date();
+                java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
                 if ((newrate1 >= 0) && (newrate1 <= 100) && (newrate3 >= 0) && (newrate3 <= 100) && (newrate6 >= 0) && (newrate6 <= 100) && (newrate9 >= 0) && (newrate9 <= 100) && (newrate12 >= 0) && (newrate12 <= 100) && (newrate18 >= 0) && (newrate18 <= 100) && (newrate24 >= 0) && (newrate24 <= 100) && (newrate36 >= 0) && (newrate36 <= 100) && (newrate0 >= 0) && (newrate0 <= 100)) {
-                    changeRate.changeRate(newrate0, newrate1, newrate3, newrate6, newrate9, newrate12, newrate18, newrate24, newrate36, date);
+                    changeRate.changeRate(newrate0, newrate1, newrate3, newrate6, newrate9, newrate12, newrate18, newrate24, newrate36, "" + sqlDate);
                     JOptionPane.showMessageDialog(rootPane, " Thay đổi thành công");
-                    Date LastMod = new Date();
-                    changeRate.setDate(LastMod.from(Instant.now()));
+
+                    changeRate.setDate(sqlDate);
                     jLabel13.setText("" + changeRate.getDate(changeRate.getCurrentNumberRate()));
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Số không hợp lệ ");

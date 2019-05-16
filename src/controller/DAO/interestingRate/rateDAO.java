@@ -111,6 +111,61 @@ public class rateDAO {
         }
     }
 
+    public Date getAccountDate(int id) {
+        Date date = new Date();
+        Date kq = null;
+        try {
+            DBconnection dbConnection = new DBconnection();
+            connection = dbConnection.getConnect();
+            String query = "SELECT `created_at` FROM `savingaccount` WHERE `id`='" + id + "'";
+            Statement comm = connection.createStatement();
+            ResultSet rs = comm.executeQuery(query);
+            while (rs.next()) {
+                kq = rs.getDate("created_at");
+            }
+            return kq;
+        } catch (Exception e) {
+            Logger.getLogger(loanrateDAO.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
+
+    public int getMonth(int id) {
+        int kq = -1;
+        try {
+            DBconnection dbConnection = new DBconnection();
+            connection = dbConnection.getConnect();
+            String query = "SELECT EXTRACT(MONTH FROM '" + getAccountDate(id) + "')";
+            Statement comm = connection.createStatement();
+            ResultSet rs = comm.executeQuery(query);
+            while (rs.next()) {
+                kq = rs.getInt(1);
+            }
+            return kq;
+        } catch (Exception e) {
+            Logger.getLogger(loanrateDAO.class.getName()).log(Level.SEVERE, null, e);
+            return -1;
+        }
+    }
+
+    public int getYear(int id) {
+        int kq = -1;
+        try {
+            DBconnection dbConnection = new DBconnection();
+            connection = dbConnection.getConnect();
+            String query = "SELECT EXTRACT(Year FROM '" + getAccountDate(id) + "')";
+            Statement comm = connection.createStatement();
+            ResultSet rs = comm.executeQuery(query);
+            while (rs.next()) {
+                kq = rs.getInt(1);
+            }
+            return kq;
+        } catch (Exception e) {
+            Logger.getLogger(loanrateDAO.class.getName()).log(Level.SEVERE, null, e);
+            return -1;
+        }
+    }
+
     public boolean setDate(Date date) {
         try {
             DBconnection dbConnection = new DBconnection();

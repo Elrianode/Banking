@@ -86,9 +86,9 @@ public class loanrateDAO {
         }
     }
 
-    public String getDate(int id) {
+    public Date getDate(int id) {
         Date date = new Date();
-        String kq = "";
+        Date kq = null;
         try {
             DBconnection dbConnection = new DBconnection();
             connection = dbConnection.getConnect();
@@ -96,12 +96,66 @@ public class loanrateDAO {
             Statement comm = connection.createStatement();
             ResultSet rs = comm.executeQuery(query);
             while (rs.next()) {
-                kq = rs.getString("created_at");
+                kq = rs.getDate("created_at");
             }
             return kq;
         } catch (Exception e) {
             Logger.getLogger(loanrateDAO.class.getName()).log(Level.SEVERE, null, e);
             return null;
+        }
+    }
+
+    public Date getAccountDate(int id) {
+        Date date = new Date();
+        Date kq = null;
+        try {
+            DBconnection dbConnection = new DBconnection();
+            connection = dbConnection.getConnect();
+            String query = "SELECT `created_at` FROM `loanaccount` WHERE `id`='" + id + "'";
+            Statement comm = connection.createStatement();
+            ResultSet rs = comm.executeQuery(query);
+            while (rs.next()) {
+                kq = rs.getDate("created_at");
+            }
+            return kq;
+        } catch (Exception e) {
+            Logger.getLogger(loanrateDAO.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
+
+    public int getMonth(int id) {
+        int kq = -1;
+        try {
+            DBconnection dbConnection = new DBconnection();
+            connection = dbConnection.getConnect();
+            String query = "SELECT EXTRACT(MONTH FROM '" + getAccountDate(id) + "')";
+            Statement comm = connection.createStatement();
+            ResultSet rs = comm.executeQuery(query);
+            while (rs.next()) {
+                kq = rs.getInt(1);
+            }
+            return kq;
+        } catch (Exception e) {
+            Logger.getLogger(loanrateDAO.class.getName()).log(Level.SEVERE, null, e);
+            return -1;
+        }
+    }
+    public int getYear(int id) {
+        int kq = -1;
+        try {
+            DBconnection dbConnection = new DBconnection();
+            connection = dbConnection.getConnect();
+            String query = "SELECT EXTRACT(Year FROM '" + getAccountDate(id) + "')";
+            Statement comm = connection.createStatement();
+            ResultSet rs = comm.executeQuery(query);
+            while (rs.next()) {
+                kq = rs.getInt(1);
+            }
+            return kq;
+        } catch (Exception e) {
+            Logger.getLogger(loanrateDAO.class.getName()).log(Level.SEVERE, null, e);
+            return -1;
         }
     }
 

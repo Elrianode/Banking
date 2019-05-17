@@ -86,11 +86,15 @@ public class BankMainFrm extends javax.swing.JFrame {
         cboQuy = new javax.swing.JComboBox();
         cboNam = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         lblTotalThu = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        lblTotalChi = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
@@ -358,9 +362,7 @@ public class BankMainFrm extends javax.swing.JFrame {
 
         cboNam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2019", "2020", "2021", "2022", "2023" }));
 
-        jLabel3.setText("jLabel3");
-
-        jLabel6.setText("jLabel6");
+        jLabel3.setText("Danh sách khách hàng đến hạn: ");
 
         jLabel7.setText("Tháng");
 
@@ -373,39 +375,52 @@ public class BankMainFrm extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setText("Tổng thu: ");
+
+        jLabel10.setText("Tổng chi: ");
+
+        jLabel11.setText("Bảng chi :");
+
+        jLabel12.setText("Bảng thu:");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
+                    .addComponent(jLabel11)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cboQuy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)))
+                        .addGap(157, 157, 157)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboQuy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTotalThu, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTotalChi, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cboNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
+                                .addGap(18, 18, 18)
                                 .addComponent(jButton2))
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(85, 85, 85)
+                                .addGap(61, 61, 61)
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(127, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTotalThu, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(237, 237, 237))
+                                    .addComponent(jLabel12)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(jLabel3))
+                .addContainerGap(230, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -417,17 +432,25 @@ public class BankMainFrm extends javax.swing.JFrame {
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
                     .addComponent(jButton2))
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addGap(15, 15, 15)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
+                .addGap(3, 3, 3)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(lblTotalChi, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
-                .addComponent(lblTotalThu, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(lblTotalThu, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 123, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Báo cáo", jPanel8);
@@ -511,7 +534,7 @@ public class BankMainFrm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-
+        
         try {
             // TODO add your handling code here:
             hienThiDanhSachKhachHang();
@@ -537,13 +560,13 @@ public class BankMainFrm extends javax.swing.JFrame {
         }
         System.out.println((float) SAD.sumCash());
         lblTongThu.setText("" + String.format("%.0f", (float) SAD.sumCash()) + "$");
-
+        
         try {
             hienThiDanhSachSoTietKiem();
         } catch (SQLException ex) {
             Logger.getLogger(BankMainFrm.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
         try {
             hienThiDanhSachKhachHangChiTheoFilter(Integer.parseInt(cboQuy.getSelectedItem().toString()), Integer.parseInt(cboNam.getSelectedItem().toString()));
             hienThiDanhSachSoTietKiemTheoFilter(Integer.parseInt(cboQuy.getSelectedItem().toString()), Integer.parseInt(cboNam.getSelectedItem().toString()));
@@ -608,12 +631,12 @@ public class BankMainFrm extends javax.swing.JFrame {
             Logger.getLogger(BankMainFrm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    
     public void hienThiDanhSachKhachHang() throws SQLException {
-
+        
         String[] colTieuDe = new String[]{"Id",
             "Họ tên", "Địa chỉ", "Id card", "phone"};
-
+        
         DefaultTableModel model
                 = new DefaultTableModel(colTieuDe, 0) {
                     @Override
@@ -622,7 +645,7 @@ public class BankMainFrm extends javax.swing.JFrame {
                     }
                 };
         Object[] row;
-
+        
         CustomerDAO cusDao = new CustomerDAO();
         List<Customer> lstCustomer = cusDao.getListCustomer();
         DBconnection connection = new DBconnection();
@@ -633,13 +656,13 @@ public class BankMainFrm extends javax.swing.JFrame {
         ResultSet rs = comm.executeQuery(strSQL);
         while (rs.next()) {
             row = new Object[colTieuDe.length];
-
+            
             row[0] = rs.getInt("id");
             row[1] = rs.getString("name");
             row[2] = rs.getString("address");
             try {
                 row[3] = Long.parseLong(rs.getString("idcard"));
-
+                
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Lỗi dữ liệu");
             }
@@ -656,11 +679,11 @@ public class BankMainFrm extends javax.swing.JFrame {
         JTableDanhSachThu.getColumnModel().getColumn(3).setCellRenderer(rightRenderer);
         //  JTableDanhSachThu.getColumnModel().getColumn(5).setCellRenderer(rightRenderer);
     }
-
+    
     public void hienThiDanhSachKhachHangChi() {
         String[] colTieuDe = new String[]{"Id",
             "Họ tên", "Tiền vay", "Kì hạn", "Ngày vay tiền", " Loại vay tiền"};
-
+        
         DefaultTableModel model
                 = new DefaultTableModel(colTieuDe, 0) {
                     @Override
@@ -697,12 +720,12 @@ public class BankMainFrm extends javax.swing.JFrame {
             System.out.println("" + e);
         }
     }
-
+    
     public void hienThiDanhSachSoTietKiem() throws SQLException {
-
+        
         String[] colTieuDe = new String[]{"Id",
             "Họ tên", "Địa chỉ", "Id card", "phone", "Tiền gửi", "Ngày lập thẻ", "Kì hạn", "Lãi xuất"};
-
+        
         DefaultTableModel model
                 = new DefaultTableModel(colTieuDe, 0) {
                     @Override
@@ -710,9 +733,9 @@ public class BankMainFrm extends javax.swing.JFrame {
                         return false;
                     }
                 };
-
+        
         Object[] row;
-
+        
         CustomerDAO cusDao = new CustomerDAO();
         List<Customer> lstCustomer = cusDao.getListCustomer();
         DBconnection connection = new DBconnection();
@@ -723,13 +746,13 @@ public class BankMainFrm extends javax.swing.JFrame {
         ResultSet rs = comm.executeQuery(strSQL);
         while (rs.next()) {
             row = new Object[colTieuDe.length];
-
+            
             row[0] = rs.getInt("id");
             row[1] = rs.getString("name");
             row[2] = rs.getString("address");
             try {
                 row[3] = Long.parseLong(rs.getString("idcard"));
-
+                
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(rootPane, "Lỗi dữ liệu");
             }
@@ -751,15 +774,15 @@ public class BankMainFrm extends javax.swing.JFrame {
         JTableSoTietKiem.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
         JTableSoTietKiem.getColumnModel().getColumn(3).setCellRenderer(rightRenderer);
         JTableSoTietKiem.getColumnModel().getColumn(5).setCellRenderer(rightRenderer);
-
+        
     }
-
+    
     public void hienThiDanhSachKhachHangChiTheoFilter(int quy, int year) {
         loanrateDAO loanDao = new loanrateDAO();
-
+        float total = 0;
         String[] colTieuDe = new String[]{"Id",
             "Họ tên", "Tiền vay", "Ngày vay tiền",};
-
+        
         DefaultTableModel model
                 = new DefaultTableModel(colTieuDe, 0) {
                     @Override
@@ -782,6 +805,8 @@ public class BankMainFrm extends javax.swing.JFrame {
                 //          rows[3] = rs.getInt("term") + " tháng";
                 rows[3] = rs.getString("created_at");
                 //    rows[5] = rs.getString("kind"); // lấy dữ liệu tại cột số 1 (ứng với mã hàng)
+                float a = rs.getFloat("loan");
+                float rate = loanDao.getRate(rs.getInt("term") + "month", rs.getInt("id_loanrate"));
                 int thang = loanDao.getMonth(rs.getInt(9)) + rs.getInt("term");
                 while (thang > 12) {
                     thang = thang - 12;
@@ -790,10 +815,11 @@ public class BankMainFrm extends javax.swing.JFrame {
                 int nam = loanDao.getYear(rs.getInt(9)) + (loanDao.getMonth(rs.getInt(9)) + rs.getInt("term")) / 12;
                 if ((quy == thang) && (nam == year)) {
                     model.addRow(rows);
-
+                    total = total + (a * rate * rs.getFloat("term"));
                 }
-
+                
             }
+            lblTotalChi.setText("" + total);
             conn.close();
             tblChiFilter.setModel(model);
             DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
@@ -804,15 +830,15 @@ public class BankMainFrm extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println("" + e);
         }
-
+        
     }
-
+    
     public void hienThiDanhSachSoTietKiemTheoFilter(int quy, int year) throws SQLException {
         float total = 0;
         rateDAO loanDao = new rateDAO();
         String[] colTieuDe = new String[]{"Id",
             "Họ tên", "Tiền gửi", "Ngày lập thẻ"};
-
+        
         DefaultTableModel model
                 = new DefaultTableModel(colTieuDe, 0) {
                     @Override
@@ -820,9 +846,9 @@ public class BankMainFrm extends javax.swing.JFrame {
                         return false;
                     }
                 };
-
+        
         Object[] row;
-
+        
         CustomerDAO cusDao = new CustomerDAO();
         List<Customer> lstCustomer = cusDao.getListCustomer();
         DBconnection connection = new DBconnection();
@@ -833,7 +859,7 @@ public class BankMainFrm extends javax.swing.JFrame {
         ResultSet rs = comm.executeQuery(strSQL);
         while (rs.next()) {
             row = new Object[colTieuDe.length];
-
+            
             row[0] = rs.getInt("id");
             row[1] = rs.getString("name");
             // row[2] = rs.getString("address");
@@ -859,8 +885,8 @@ public class BankMainFrm extends javax.swing.JFrame {
             System.out.println("nam: " + nam);
             if ((quy == thang) && (nam == year)) {
                 model.addRow(row);
-                total = total + (a * rate);
-
+                total = total + (a * rate * rs.getFloat("term"));
+                
             }
         }
         lblTotalThu.setText("" + total);
@@ -869,6 +895,7 @@ public class BankMainFrm extends javax.swing.JFrame {
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
         tblThuFilter.getColumnModel().getColumn(0).setCellRenderer(rightRenderer);
+        tblThuFilter.getColumnModel().getColumn(2).setCellRenderer(rightRenderer);
         conn.close();
     }
 
@@ -921,13 +948,16 @@ public class BankMainFrm extends javax.swing.JFrame {
     private static javax.swing.JButton jButton6;
     private static javax.swing.JFrame jFrame1;
     private static javax.swing.JLabel jLabel1;
+    private static javax.swing.JLabel jLabel10;
+    private static javax.swing.JLabel jLabel11;
+    private static javax.swing.JLabel jLabel12;
     private static javax.swing.JLabel jLabel2;
     private static javax.swing.JLabel jLabel3;
     private static javax.swing.JLabel jLabel4;
     private static javax.swing.JLabel jLabel5;
-    private static javax.swing.JLabel jLabel6;
     private static javax.swing.JLabel jLabel7;
     private static javax.swing.JLabel jLabel8;
+    private static javax.swing.JLabel jLabel9;
     private static javax.swing.JPanel jPanel1;
     private static javax.swing.JPanel jPanel2;
     private static javax.swing.JPanel jPanel3;
@@ -945,6 +975,7 @@ public class BankMainFrm extends javax.swing.JFrame {
     private static javax.swing.JTable jTableKhachHangChi;
     private static javax.swing.JLabel lblTongChi;
     private static javax.swing.JLabel lblTongThu;
+    private static javax.swing.JLabel lblTotalChi;
     private static javax.swing.JLabel lblTotalThu;
     private static javax.swing.JTable tblChiFilter;
     private static javax.swing.JTable tblThuFilter;
